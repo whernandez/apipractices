@@ -65,3 +65,15 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+# JMS Serializer Configuration
+jms_serializer:
+    handlers:
+        datetime:
+            default_format: "m/d/Y h:i:s A"
+    metadata:
+        auto_detection: true
+        directories:
+            appBundle:
+                namespace_prefix: "AppBundle\\Entity\\"
+                path: "@AppBundle/Resources/Serializer"

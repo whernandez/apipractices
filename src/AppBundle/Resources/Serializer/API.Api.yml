@@ -1,0 +1,11 @@
+AppBundle\Entity\API\Api:
+    exclusion_policy: all
+    properties:
+        id:
+          groups: [user]
+
+        name:
+          groups: [user]
+
+        fullname:
+          groups: [user]

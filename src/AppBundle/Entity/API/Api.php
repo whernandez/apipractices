@@ -3,11 +3,12 @@
 namespace AppBundle\Entity\API;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Api
  *
- * @ORM\Table(name="a_p_i_api")
+ * @ORM\Table(name="api")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\API\ApiRepository")
  */
 class Api
@@ -23,14 +24,16 @@ class Api
 
     /**
      * @var string
-     *
+     * @Assert\NotNull(message="Application name field should not be null")
+     * @Assert\NotBlank(message="Application name field should not be blank")
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
-     *
+     * @Assert\NotNull(message="Application fullname field should not be null")
+     * @Assert\NotBlank(message="Application fullname field should not be blank")
      * @ORM\Column(name="fullname", type="string", length=255)
      */
     private $fullname;

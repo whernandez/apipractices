@@ -29,7 +29,9 @@ class ApiController extends Controller
     public function getAllAction()
     {
         $api = $this->get(ApiService::class)->getAll();
-        $context = SerializationContext::create()->setSerializeNull(true)->setGroups('user');
+
+        $context = SerializationContext::create()->setSerializeNull(true);
+        $context->setGroups('user');
         $api = json_decode($this->container->get('jms_serializer')->serialize($api, 'json', $context));
 
         // Response to Client

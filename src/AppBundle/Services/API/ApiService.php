@@ -39,8 +39,6 @@ class ApiService
      * @return array|\Doctrine\Common\Persistence\ObjectRepository|mixed
      */
     public function getAll() {
-        dump('ok');
-        die;
         return $this->em->getRepository(API\Api::class)->findAll();
     }
 
